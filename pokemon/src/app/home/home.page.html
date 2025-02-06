@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Pokédex
+    </ion-title>
+  </ion-toolbar>
+ </ion-header>
+ 
+ 
+ <ion-content>
+  <div class="pokedex-container">
+  <ion-card *ngFor="let pokemon of listPokemones">
+    <ion-card-header>
+      <ion-card-title (click)="toggleDetails(pokemon)">
+        {{ pokemon.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngIf="pokemon.showDetails">
+        <ion-img [src]="pokemon.image" style="width: 100px; height: 100px;"></ion-img>
+        <h3>Habilidades</h3>
+        <ul>
+          <li *ngFor="let ability of pokemon.abilities">
+            {{ ability }}
+          </li>
+        </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
+ </div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ </ion-content>
+ 
